@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        .toolTip {
+            display: block;
+            padding-top: 5px;
+            position: relative;
+        }
+
+        .toolTip:hover::after {
+            display: block;
+            content: attr(data-tip);
+            background: pink;
+            padding: 5px;
+            border-radius: 5px;
+            position: absolute;
+            top: 2em;
+            z-index: 1;
+        }
+
+        .toolTip:hover::before {
+            content: '';
+            border-color: transparent transparent pink transparent;
+            border-style: solid;
+            border-width: 7px;
+            position: absolute;
+            display: block;
+            top: 1.2em;
+            left: .4em;
+            z-index: 1;
+        }
+        @keyframes blink{
+            50% {color: transparent;}
+        }
+        .highlight {
+            animation: 1s blink 3 steps(1);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <a href="#" class="toolTip highlight" data-tip="I'm tool tip">ToolTip</a>
+    </div>
+    <div class="toolTip highlight" data-tip="This is a div">
+        oooo
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body{
+            font-size: 16px;
+        }
+        body *{
+            margin-bottom: 20px;
+        }
+        .common-checkbox input[type="checkbox"]+label::before {
+            content: '\a0';
+            display: inline-block;
+            vertical-align: .2em;
+            width: .8em;
+            height: .8em;
+            margin-right: .2em;
+            border-radius: .2em;
+            background: silver;
+            text-indent: .15em;
+            line-height: .65;
+        }
+
+
+        .common-checkbox input[type="checkbox"] {
+            position: absolute;
+            opacity: 0;
+            /*隐藏 checkbox*/
+        }
+        /* input[type="checkbox"]:focus+label::before {
+            box-shadow: 0 0 .1em .1em #58a;
+        }
+
+        input[type="checkbox"]:disabled+label::before {
+            background: gray;
+            box-shadow: none;
+            color: #555;
+        } */
+
+        .common-checkbox input[type="checkbox"]:checked+label::before {
+            content: '\2713';
+            background: yellowgreen;
+        }
+
+        .slider-checkbox {
+            position: relative;
+            border-radius: 30% 50%;
+            background: gray;
+            background-clip: content-box;
+            border: 5px solid lightgray;
+            width: 50px;
+            height: 5px;
+        }
+
+        .slider-checkbox label {
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            background: greenyellow;
+            position: absolute;
+            top: -7px;
+            cursor: pointer;
+        }
+
+        .slider-checkbox input[type=checkbox]:checked+label {
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+            transition: all .5s ease;
+            right: 0;
+        }
+
+        .slider-checkbox input[type=checkbox] {
+            position: absolute;
+            opacity: 0;
+        }
+
+        .content-checkbox {
+            /* font-size: 16px; */
+            width: 3.5em;
+            line-height: 16px;
+            background: #333;
+            color: #fff;
+            border-radius: 11px;
+            padding: 2px;
+            position: relative;
+            padding: 3px;
+        }
+
+        .content-checkbox::before {
+            content: 'Yes';
+            line-height: 100%;
+            margin-right: .1em;
+        }
+
+        .content-checkbox::after {
+            content: 'No';
+            line-height: 100%;
+        }
+
+        .content-checkbox input[type=checkbox]+label {
+            background: yellowgreen;
+            width: 2em;
+            height: 2em;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: -.4em;
+            cursor: pointer;
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+            transition: all .5s ease;
+            z-index: 2;
+        }
+
+        .content-checkbox input[type=checkbox]:checked+label {
+            -webkit-transition: all .5s ease;
+            -moz-transition: all .5s ease;
+            -o-transition: all .5s ease;
+            -ms-transition: all .5s ease;
+            transition: all .5s ease;
+            left: calc(100% - 2em);
+        }
+
+        .content-checkbox input[type=checkbox] {
+            position: absolute;
+            opacity: 0;
+            z-index: 3;
+        }
+
+        .tick::before{
+            content:'\2713';
+            margin-right: .3em;
+
+        }
+    </style>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <div class="common-checkbox">
+        <input type="checkbox" id="awesome" name="" value="Y">
+        <label for="awesome">Awesome</label>
+    </div>
+    <div class="slider-checkbox">
+        <input type="checkbox" id="slider-awesome" name="" value="">
+        <label for="slider-awesome"></label>
+    </div>
+
+    <div class="content-checkbox">
+        <input type="checkbox" id="slider-content" name="" value="">
+        <label for="slider-content"></label>
+    </div>
+    <div>
+        <label for="" class="tick">test</label>
+    </div>
+</body>
+
+</html>

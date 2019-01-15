@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title></title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        ul {
+            list-style-image: url(xx.png);
+            /* list-style-type: decimal; */
+        }
+
+        ol li {
+            list-style-type: decimal;
+        }
+
+        li.off {
+            list-style-type: none;
+        }
+
+        a[href]::before {
+            content: "(link)";
+        }
+
+        h1::before {
+            content: "New Section";
+            display: block;
+            color: gray;
+        }
+
+        p {
+            color: green;
+        }
+
+        p::before {
+            content: ":::";
+        }
+
+        .req::after {
+            content: '*';
+            color: red;
+        }
+
+        .quo {
+            quotes: """ """;
+        }
+
+        .quo::before {
+            content: open-quote;
+        }
+
+        .quo::after {
+            content: close-quote;
+        }
+
+       input:focus{
+           outline-color:red;
+       }
+
+         ::selection {
+            background: lightblue;
+            color: #ffffff;
+        }
+    </style>
+</head>
+
+<body>
+    <ul>
+        <li> <a href="#">list - 01</a></li>
+        <li>list - 02</li>
+        <li>list - 03</li>
+        <li>list - 04</li>
+        <li>list - 05</li>
+    </ul>
+
+    <ol>
+        <li>Item the first</li>
+        <li class='off'>Item the second</li>
+        <li>Item the third</li>
+        <li class="off">Item the fourth</li>
+        <li>Item the fifth</li>
+    </ol>
+
+    <h1>Hello</h1>
+    <p>I am a paragraph</p>
+    <label for="" class="req">
+        Hello
+    </label>
+    <input type="text" name="" value="" placeholder="test">
+
+    <select>
+        <option value="">MM1</option>
+        <option value="">MM2</option>
+        <option value="">MM3</option>
+    </select>
+</body>
+
+</html>

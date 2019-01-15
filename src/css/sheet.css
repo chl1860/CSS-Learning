@@ -1,0 +1,41 @@
+/*.warning{
+    font-weight: bold;
+}
+.urgent{
+    font-style: italic;
+}*/
+p.warning.help{
+    background: silver;
+}
+
+a[href][title]{
+    font-weight: bold;
+}
+a:hover{
+    font-size: 250%;
+}
+span.barren{
+    font-style: italic;
+}
+h1>strong{
+    color:red;
+}
+input:focus{
+    background: silver;
+    font-weight: bold;
+    border-color: none;
+}
+
+label:after{
+    content:'*';
+    color:red;
+}
+
+#div-test{
+    color:blue;
+}
+
+#text-property{
+    text-indent: -4em;
+    padding-left: 4em;
+}
